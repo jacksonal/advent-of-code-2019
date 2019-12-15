@@ -1,4 +1,4 @@
-(ns advent-of-code-2019.core
+(ns advent_of_code_2019.core
   (:gen-class))
 (load "day1" 
       "day2")

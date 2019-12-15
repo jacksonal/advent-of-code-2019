@@ -1,4 +1,5 @@
-
+;(ns advent_of_code_2019.day2
+  ;(:require '[clj-time :as t]))
 (defn get-op-code
   [instruction]
   (mod instruction 100))

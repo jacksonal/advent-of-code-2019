@@ -1,4 +1,4 @@
-# advent-of-code-2019
+# advent_of_code_2019
 
 FIXME: description
 
@@ -10,7 +10,7 @@ Download from http://example.com/FIXME.
 
 FIXME: explanation
 
-    $ java -jar advent-of-code-2019-0.1.0-standalone.jar [args]
+    $ java -jar advent_of_code_2019-0.1.0-standalone.jar [args]
 
 ## Options
 
