@@ -7,6 +7,6 @@
   "solves em all"
   [& args]
   
-  (println "day 1:" (how-much-fuel))
-  (println "day 2:" (int-compute))
+  ;(println "day 1:" (how-much-fuel))
+  ;(println "day 2:" (int-compute))
   )
