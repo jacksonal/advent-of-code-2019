@@ -1,30 +1,35 @@
+(ns advent-of-code-2019.day8)
+
 (defn count-digits
   "reduce to a tuple of number of 0s, 1s, and 2s"
   [layer]
   [(reduce (fn 
-            [seed pixel]
-            (if (zero? pixel)
-              (inc seed)
-              seed)) 0 layer)
-  (reduce (fn
-            [seed pixel]
-            (if (= pixel 1)
-              (inc seed)
-              seed)) 0 layer)
-  (reduce (fn
-            [seed pixel]
-            (if (= pixel 2)
-              (inc seed)
-              seed)) 0 layer)])
+             [seed pixel]
+             (if (zero? pixel)
+               (inc seed)
+               seed)) 0 layer)
+   (reduce (fn
+             [seed pixel]
+             (if (= pixel 1)
+               (inc seed)
+               seed)) 0 layer)
+   (reduce (fn
+             [seed pixel]
+             (if (= pixel 2)
+               (inc seed)
+               seed)) 0 layer)])
 
 (defn apply-mask
   [top bottom]
-  (let [flat-top (flatten top)
+  (let [partition-n (count (first top))
+        flat-top (flatten top)
         flat-bottom (flatten bottom)]
-    (map (fn [[top-pixel bottom-pixel]]
-           (if (= top-pixel 2)
-             bottom-pixel
-             top-pixel)) (map vector flat-top flat-bottom))))
+    (partition partition-n 
+               (map (fn [[top-pixel bottom-pixel]]
+                      (if (= top-pixel 2)
+                        bottom-pixel
+                        top-pixel)) 
+                    (map vector flat-top flat-bottom)))))
   
 (defn combine-layers
   [layers]
